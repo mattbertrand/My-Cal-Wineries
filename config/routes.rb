@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :regions
   root to: 'static#home'
   
   resources :wineries
