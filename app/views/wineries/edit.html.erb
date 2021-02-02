@@ -1,0 +1,20 @@
+<h3>Edit <%= @winery.name %></h3>
+
+<%= form_for @winery do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %><br>
+    </div>
+    <div>
+        <%= f.label :website %>
+        <%= f.text_field :website %><br>
+    </div>
+    <div>
+        <%= f.label :phone %>
+        <%= f.telephone_field :phone %><br>
+    </div>
+
+    <%= f.submit %>
+
+<% end %>
+<br>
