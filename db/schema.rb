@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_02_02_181228) do
 
   create_table "users", force: :cascade do |t|
+    t.string "username"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -28,14 +29,8 @@ ActiveRecord::Schema.define(version: 2021_02_02_181228) do
     t.string "name"
     t.string "website"
     t.string "phone"
-    t.integer "user_id", null: false
-    t.integer "county_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["county_id"], name: "index_wineries_on_county_id"
-    t.index ["user_id"], name: "index_wineries_on_user_id"
   end
 
-  add_foreign_key "wineries", "counties"
-  add_foreign_key "wineries", "users"
 end
