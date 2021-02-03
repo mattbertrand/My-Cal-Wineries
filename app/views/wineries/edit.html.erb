@@ -1,33 +1,4 @@
 <h3>Edit <%= @winery.name %></h3>
 
-<%= form_for @winery do |f| %>
-    <div>
-        <%= f.label :name %>
-        <%= f.text_field :name %><br>
-    </div>
-    <div>
-        <%= f.label :website %>
-        <%= f.text_field :website %><br>
-    </div>
-    <div>
-        <%= f.label :phone %>
-        <%= f.telephone_field :phone %><br>
-    </div>
+<%= render partial: "form", locals: { winery: @winery } %>
 
-    <h4>Select Region:</h4>
-    <div>
-        <%= f.collection_select :region_id, Region.all, :id, :name, include_blank: "Select Region" %>
-    </div>
-
-    <h4>Add Region:</h4>
-    <%= f.fields_for :region, @winery.build_region do |region_builder| %>
-        <div>
-            <%= region_builder.label :name %>
-            <%= region_builder.text_field :name %>
-        </div>
-    <% end %>
-
-    <%= f.submit %>
-
-<% end %>
-<br>
