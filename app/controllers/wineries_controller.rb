@@ -48,6 +48,6 @@ class WineriesController < ApplicationController
         end
 
         def winery_params
-            params.require(:winery).permit(:name, :website, :phone, region_attributes: [:name])
+            params.require(:winery).permit(:name, :region_id, :website, :phone, region_attributes: [:name])
         end
 end

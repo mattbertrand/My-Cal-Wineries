@@ -5,7 +5,7 @@ class Winery < ApplicationRecord
   validates :website, presence: true
   validates :phone, presence: true
 
-  accepts_nested_attributes_for :region
+  accepts_nested_attributes_for :region, reject_if: :all_blank
 
   def region_name
     self.region ? self.region.name : "Region not available"

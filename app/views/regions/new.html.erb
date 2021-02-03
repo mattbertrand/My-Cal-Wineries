@@ -1,0 +1,28 @@
+<h1>Add a Region</h1>
+
+<%= form_for @region do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+
+    <h3>Add a winery associated to that region:</h3>
+
+    <%= f.fields_for :wineries, @region.wineries do |w| %>
+        <br>
+        <div>
+            <%= w.label :name %>
+            <%= w.text_field :name %>
+        </div>
+        <div>
+            <%= w.label :website %>
+            <%= w.text_field :website %>
+        </div>
+        <div>
+            <%= w.label :phone %>
+            <%= w.telephone_field :phone %>
+        </div>
+    <% end %>
+    <br>
+    <%= f.submit %>
+<% end %>
