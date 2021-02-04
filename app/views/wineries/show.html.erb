@@ -1,7 +1,7 @@
 <h1><%= @winery.name %></h1>
 <p>Website: <%= @winery.website %></p>
 <p>Phone Number: <%= @winery.phone %></p>
-<p>Region: <%= @winery.region_name %></p>
+<p>Region: <%= region_name(@winery) %></p>
 
 <%= link_to "Edit", edit_winery_path(@winery) %>
 
