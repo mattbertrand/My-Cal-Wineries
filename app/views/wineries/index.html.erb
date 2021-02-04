@@ -1,4 +1,4 @@
-<h1>List of wineries</h1>
+<h1>List of wineries <%= " for #{@region.name}" if @region %></h1>
 
 <ul>
 <%= render @wineries %>

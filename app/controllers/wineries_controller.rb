@@ -3,7 +3,11 @@ class WineriesController < ApplicationController
     before_action :find_winery, only: [:show, :edit, :update, :destroy]
     
     def index
-        @wineries = Winery.all
+        if @region
+            @wineries = @region.wineries
+        else
+            @wineries = Winery.all
+        end
     end
 
     def show
