@@ -1,1 +1,17 @@
-<li><%= link_to winery.name, winery_path(winery) %></li>
+<div class="col s12 m7">
+    <h4 class="header"><%= winery.name %></h4>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="https://lorempixel.com/100/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information.</p>
+        </div>
+        <div class="card-action">
+          <%= link_to "More Information", winery_path(winery) %>
+        </div>
+      </div>
+    </div>
+  </div>
+

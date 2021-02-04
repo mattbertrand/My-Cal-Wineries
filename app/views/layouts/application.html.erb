@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CalWineries</title>
+    <title>MyCalWineries</title>
     <%= csrf_meta_tags %>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -21,19 +21,13 @@
 
   <body>
 
-
       <%= render partial: 'layouts/nav', locals: { navbar_color: "red darken-4" }%>
       <%= render 'layouts/errors' %>
      
-
       <div class="container">
         <%= yield %>
-        </div>
+      </div>
 
-    <footer class="section red darken-4 white-text center">
-        <p class="flow-text">My Cal Wineries &copy; 2021 </p>
-      </footer>
-    
     
   </body>
 </html>

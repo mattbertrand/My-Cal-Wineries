@@ -22,9 +22,10 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'devise'
+gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
 
 # Use Active Storage variant
