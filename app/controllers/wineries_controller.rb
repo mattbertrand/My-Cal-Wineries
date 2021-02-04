@@ -1,4 +1,5 @@
 class WineriesController < ApplicationController
+    before_action :find_region, only: [:index, :new, :create]
     before_action :find_winery, only: [:show, :edit, :update, :destroy]
     
     def index
@@ -10,7 +11,12 @@ class WineriesController < ApplicationController
     end
 
     def new
-        @winery = Winery.new
+        if @region
+            @winery = @region.wineries.build
+            render :new_region_winery
+        else
+            @winery = Winery.new
+        end
     end
 
     def create
@@ -18,8 +24,14 @@ class WineriesController < ApplicationController
         if @winery.save
             redirect_to wineries_path 
         else
+
             flash.now[:error] = @winery.errors.full_messages
-            render :new
+            
+            if @region
+                render :new_region_winery
+            else
+                render :new
+            end
         end
     end
 
@@ -45,6 +57,12 @@ class WineriesController < ApplicationController
     private
         def find_winery
             @winery = Winery.find_by_id(params[:id])
+        end
+
+        def find_region
+            if params[:region_id]
+                @region = Region.find_by_id(params[:region_id])
+            end
         end
 
         def winery_params

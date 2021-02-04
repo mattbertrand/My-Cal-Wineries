@@ -1,0 +1,20 @@
+<h2>Nested Route for New</h2>
+
+<%= form_for [@region, @winery] do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %><br>
+    </div>
+    <div>
+        <%= f.label :website %>
+        <%= f.text_field :website %><br>
+    </div>
+    <div>
+        <%= f.label :phone %>
+        <%= f.telephone_field :phone %><br>
+    </div>
+
+    <%= f.hidden_field :region_id %>
+
+    <%= f.submit %>
+<% end %>
