@@ -9,6 +9,7 @@
     <h3>Add a winery associated to that region:</h3>
 
     <%= f.fields_for :wineries, @region.wineries do |w| %>
+    <h4>Winery infos:</h4>
         <br>
         <div>
             <%= w.label :name %>
@@ -26,3 +27,4 @@
     <br>
     <%= f.submit %>
 <% end %>
+<br>
