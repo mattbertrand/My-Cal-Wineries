@@ -1,5 +1,9 @@
 <h1>List of wineries <%= " for #{@region.name}" if @region %></h1>
 
+<% if @region %>
+  <p><%= link_to "Add a winery for #{@region.name}", new_region_winery_path(@region) %>
+<% end %>
+
 <ul>
 <%= render @wineries %>
 </ul>

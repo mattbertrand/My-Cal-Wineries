@@ -26,9 +26,12 @@ class WineriesController < ApplicationController
     def create
         @winery = Winery.new(winery_params)
         if @winery.save
-            redirect_to wineries_path 
+            if @region
+                redirect_to region_wineries_path(@region)
+            else
+                redirect_to wineries_path
+            end
         else
-
             flash.now[:error] = @winery.errors.full_messages
             
             if @region
