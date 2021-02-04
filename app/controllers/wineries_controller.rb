@@ -1,6 +1,7 @@
 class WineriesController < ApplicationController
     before_action :find_region, only: [:index, :new, :create]
     before_action :find_winery, only: [:show, :edit, :update, :destroy]
+    layout "wineries_layout"
     
     def index
         if @region

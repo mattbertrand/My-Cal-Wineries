@@ -1,7 +1,7 @@
 module ApplicationHelper
     def render_nav_links
         content_tag("ul", class: "right hide-on-med-and-down") do
-        if true
+        if user_signed_in?
                 content_tag("li") do
                     link_to("Discover Wineries", wineries_path)
                 end +
@@ -9,7 +9,10 @@ module ApplicationHelper
                     link_to("Add Winery", new_winery_path)
                 end +
                 content_tag("li") do
-                    link_to("Logout", destroy_user_session_path, method: 'delete')
+                    link_to("Settings", edit_user_registration_path)
+                end +
+                content_tag("li") do
+                    link_to("Logout", destroy_user_session_path, method: "DELETE")
                 end
         else
                 content_tag("li") do

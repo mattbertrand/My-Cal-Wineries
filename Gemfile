@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'dotenv-rails'
 
 # Use Active Storage variant
