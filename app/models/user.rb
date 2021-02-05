@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :wineries
+  has_many :regions, through: :wineries
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and 
   devise :database_authenticatable, :registerable,

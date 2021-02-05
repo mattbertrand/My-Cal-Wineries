@@ -1,5 +1,6 @@
 class Winery < ApplicationRecord
   belongs_to :region
+  belongs_to :user
  
   validates :name, presence: true, uniqueness: true, length: { in: 3..50 }
   validates :website, presence: true
